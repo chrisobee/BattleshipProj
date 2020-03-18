@@ -56,7 +56,6 @@ namespace Battleship
                 }
                 Console.WriteLine(columnCheck);
                 columnCheck = "";
-                Console.WriteLine($"\n");
             }
         }
         

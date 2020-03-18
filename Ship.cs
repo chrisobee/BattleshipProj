@@ -16,5 +16,6 @@ namespace Battleship
             this.spaceSize = spaceSize;
         }
         //Member Methods
+        
     }
 }

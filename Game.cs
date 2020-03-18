@@ -17,6 +17,7 @@ namespace Battleship
             playerOne.personalGameBoard.CreateBoardBoundries();
             playerOne.personalGameBoard.InitializeBoard();
             playerOne.personalGameBoard.PrintBoardToConsole();
+            playerOne.PlaceShipPhase();
         }
     }
 }
