@@ -8,6 +8,7 @@ namespace Battleship
     {
         //Member Variables
         public string name;
+        public List<Ship> destroyedShips;
         public Helper validate = new Helper();
         public GameBoard personalGameBoard = new GameBoard();
         public GameBoard enemyGameBoard = new GameBoard();
@@ -18,7 +19,7 @@ namespace Battleship
         //Constructor
         public Player()
         {
-            
+            destroyedShips = new List<Ship>();
         }
 
         //Member Methods
@@ -31,6 +32,13 @@ namespace Battleship
             bool validPosition;
             bool validDirection;
             List<Ship> ships = new List<Ship>() { destroyer, submarine, battleship, aircraftCarrier };
+
+            Console.WriteLine($"It is {name}'s turn to place ships");
+            Console.ReadLine();
+            Console.Clear();
+
+            Console.WriteLine("PERSONAL BOARD");
+            personalGameBoard.PrintBoardToConsole();
 
             foreach(Ship ship in ships)
             {
@@ -55,6 +63,7 @@ namespace Battleship
 
                 PlaceShip(ship.name, rowCheck, columnCheck, direction, ship.spaceSize);
                 Console.Clear();
+                Console.WriteLine("PERSONAL BOARD");
                 personalGameBoard.PrintBoardToConsole();
 
             }
@@ -103,6 +112,12 @@ namespace Battleship
                 default:
                     break;
             }
+        }
+
+        public void ChooseName()
+        {
+            Console.WriteLine("Choose this player's name");
+            name = Console.ReadLine();
         }
         
     }

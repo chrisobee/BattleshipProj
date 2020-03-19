@@ -79,7 +79,19 @@ namespace Battleship
         public int GetIntCoordinate(string position)
         {
             int rowCoordinate;
-            rowCoordinate = Convert.ToInt32(position[1].ToString());
+            string tempString = "";
+            for(int i = 0; i < position.Length; i++)
+            {
+                if (char.IsDigit(position[i]))
+                {
+                    tempString += position[i];
+                }
+                else
+                {
+                    continue;
+                }
+            }
+            rowCoordinate = Convert.ToInt32(tempString);
             return rowCoordinate;
         }
 
